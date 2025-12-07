@@ -1,0 +1,6 @@
+USB Hub Port Mapping:
+HubPort6 : USB Composite Device
+HubPort10 : Intel(R) Wireless Bluetooth(R)
+HubPort7 : ELAN WBF Fingerprint Sensor
+UnknownHubPort : USB Composite Device
+HubPort3 : USB Input Device

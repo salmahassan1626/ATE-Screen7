@@ -1,8 +1,66 @@
+#cmake_minimum_required(VERSION 3.16)
+
+##project(ATE-V5 VERSION 0.1 LANGUAGES CXX)
+
+## Point to your Qt installation
+#set(CMAKE_PREFIX_PATH "C:/Qt/6.9.1/msvc2022_64")
+
+#set(CMAKE_AUTOUIC ON)
+#set(CMAKE_AUTOMOC ON)
+#set(CMAKE_AUTORCC ON)
+
+#set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+## Find Qt modules
+#find_package(Qt6 REQUIRED COMPONENTS Widgets Sql SerialPort)
+
+## Project sources
+#set(PROJECT_SOURCES
+#    main.cpp
+#    widget.cpp
+#    widget.ui
+#)
+
+#qt_add_executable(ATE-V5
+#    MANUAL_FINALIZATION
+#    ${PROJECT_SOURCES}
+#)
+
+## Link Qt libs
+##target_link_libraries(ATE-V5
+##    PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql Qt6::SerialPort)
+#target_link_libraries(ATE-V5
+#    PRIVATE
+#        Qt6::Core
+#        Qt6::Gui
+#        Qt6::Widgets
+#        Qt6::Sql
+#        Qt6::SerialPort
+#        setupapi
+#        cfgmgr32
+#)
+
+## Windows/macOS bundle settings
+#set_target_properties(ATE-V5 PROPERTIES
+#    MACOSX_BUNDLE TRUE
+#    WIN32_EXECUTABLE TRUE
+#)
+
+#include(GNUInstallDirs)
+#install(TARGETS ATE-V5
+#    BUNDLE DESTINATION .
+#    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+#)
+
+#qt_finalize_executable(ATE-V5)
 cmake_minimum_required(VERSION 3.16)
 
-project(ATEapp-V3 VERSION 0.1 LANGUAGES CXX)
+project(ATE-V6 VERSION 0.1 LANGUAGES CXX)
 
-set(CMAKE_PREFIX_PATH "C:/Qt/6.8.1/msvc2022_64")
+# Point to your Qt installation (adjust if needed)
+set(CMAKE_PREFIX_PATH "C:/Qt/6.9.1/msvc2022_64")
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -11,83 +69,40 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
-
-find_package(Qt6 REQUIRED COMPONENTS Widgets Sql)
+# Find Qt modules (no SerialPort required)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Sql SerialPort)
 
 set(PROJECT_SOURCES
-        main.cpp
-        widget.cpp
-        widget.h
-        widget.ui
+    main.cpp
+    widget.cpp
+    widget.h
+    widget.ui
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(ATEapp-V3
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-    )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET ATEapp-V3 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-else()
-    if(ANDROID)
-        add_library(ATEapp-V3 SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(ATEapp-V3
-            ${PROJECT_SOURCES}
-        )
-    endif()
-endif()
+qt_add_executable(ATE-V6
+    MANUAL_FINALIZATION
+    ${PROJECT_SOURCES}
+)
 
-target_link_libraries(ATEapp-V3 PRIVATE Qt6::Widgets Qt6::Sql)
+target_link_libraries(ATE-V6
+    PRIVATE
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::Sql
+        Qt6::SerialPort
+)
 
-
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.ATEapp-V3)
-endif()
-set_target_properties(ATEapp-V3 PROPERTIES
-    ${BUNDLE_ID_OPTION}
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+set_target_properties(ATE-V6 PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
 include(GNUInstallDirs)
-install(TARGETS ATEapp-V3
+install(TARGETS ATE-V6
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(ATEapp-V3)
-endif()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+qt_finalize_executable(ATE-V6)

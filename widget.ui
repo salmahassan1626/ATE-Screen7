@@ -27,7 +27,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>4</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="page">
       <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -40,7 +40,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Welcome tro ATE Application</string>
+          <string>Welcome to ATE Application</string>
          </property>
         </widget>
        </item>
@@ -91,7 +91,7 @@
      <widget class="QWidget" name="page_2">
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
           <widget class="QLabel" name="label_2">
            <property name="text">
@@ -102,12 +102,8 @@
          <item>
           <widget class="QLineEdit" name="currentLineEdit"/>
          </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="label_5">
            <property name="text">
             <string>Volt</string>
            </property>
@@ -116,6 +112,16 @@
          <item>
           <widget class="QLineEdit" name="voltLineEdit"/>
          </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Power</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="powerLineEdit"/>
+         </item>
         </layout>
        </item>
       </layout>
@@ -123,40 +129,123 @@
      <widget class="QWidget" name="page_3">
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
-            <string>Touch</string>
+            <string>Testing Touch Test</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="touchComboBox">
-           <property name="currentText">
-            <string/>
+          <widget class="QPushButton" name="Runtouchtest">
+           <property name="text">
+            <string>Start Test</string>
            </property>
-           <property name="currentIndex">
-            <number>-1</number>
-           </property>
-           <property name="placeholderText">
-            <string>Please choose touch test result</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>Pass</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Fail</string>
-            </property>
-           </item>
           </widget>
          </item>
         </layout>
        </item>
+       <item>
+        <widget class="QLineEdit" name="touchResultlineEdit"/>
+       </item>
       </layout>
+     </widget>
+     <widget class="QWidget" name="page_7">
+      <widget class="QLineEdit" name="XritelineEdit1">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>60</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="XritelineEdit2">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>90</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>X-rite Test</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>60</y>
+         <width>37</width>
+         <height>12</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RGB</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>90</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Luminanace</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="XritelineEdit3">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>120</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>120</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Contrast</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="page_5">
       <widget class="QLabel" name="Finish">
